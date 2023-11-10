@@ -1,13 +1,56 @@
 {
+  "name": "fluxstation-fullstack-challenge",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A gas station management",
+  "packageManager": "pnpm@8.6.10",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hayatojpg/fluxstation"
+  },
+  "contributors": [
+    "Vinicius Rocha <vinicius.workspace@gmail.com>"
+  ],
   "scripts": {
-    "lint:backend": "cd backend && pnpm run lint",
-    "lint:frontend": "cd frontend && pnpm run lint",
+    "commit": "cz",
+    "lint:backend": "cd backend && bun lint",
+    "lint:frontend": "cd frontend && bun lint",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
+    "@commitlint/cz-commitlint": "^18.2.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "commitizen": "^4.3.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   }
 }

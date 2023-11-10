@@ -1,4 +1,4 @@
 {
-  "./backend/**/*.{js,ts,json,md}": ["pnpm run lint:backend"],
-  "./frontend/**/*.{js,jsx,ts,tsx,json,md}": ["pnpm run lint:frontend"]
+  "./backend/**/*.{js,ts,json,md}": ["bun run lint:backend"],
+  "./frontend/**/*.{js,jsx,ts,tsx,json,md}": ["bun run lint:frontend"]
 }
