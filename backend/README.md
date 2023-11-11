@@ -1,4 +1,5 @@
-![Logo](../.github/assets/logo.svg)
+![Logo](../.github/assets/logo_dark.svg#gh-dark-mode-only)
+![Logo](../.github/assets/logo_light.svg#gh-light-mode-only)
 
 # Backend
 
