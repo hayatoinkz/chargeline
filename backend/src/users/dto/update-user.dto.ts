@@ -1,5 +1,5 @@
 import { PartialType } from '@nestjs/swagger';
-import { CreateUserDto } from './create-driver.dto';
+import { CreateUserDto } from './create-user.dto';
 
 import { Transform } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';

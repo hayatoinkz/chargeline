@@ -7,7 +7,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Transform, Type, plainToInstance } from 'class-transformer';
-import { User } from '../entities/driver.entity';
+import { User } from '../entities/user.entity';
 
 export class FilterUserDto {
   @ApiProperty({ type: Role })
