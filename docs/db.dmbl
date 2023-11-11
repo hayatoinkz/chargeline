@@ -11,10 +11,10 @@ Project project_name {
 // Fuel Supply Context
 Table fuel_supply as fsupply{
   id uuid [pk]
-  driver_id uuid [ref: > d.id, not null]
-  quantity_liters decimal [not null, default: 1]
+  car_id uuid [ref: > c.id, not null]
+  quantity serial [not null, default: 1]
   type uuid [ref: > tf.id, not null]
-  total_price decimal [not null]
+  total_price decimal [not null, default: 0]
   created_at timestamp [not null, default: 'now()']
   updated_at timestamp [not null, default: 'now()']
   deleted_at timestamp [not null, default: 'now()']
@@ -22,7 +22,22 @@ Table fuel_supply as fsupply{
 
 Table driver as d{
   id uuid [pk]
-  name varchar [not null]
+  first_name varchar [not null]
+  last_name varchar [not null]
+  email varchar [not null]
+  is_active boolean
+  created_at timestamp [not null, default: 'now()']
+  updated_at timestamp [not null, default: 'now()']
+  deleted_at timestamp [not null, default: 'now()']
+}
+
+Table car as c{
+  id uuid [pk]
+  driver_id uuid [ref: > d.id, not null]
+  brand varchar [not null]
+  model varchar [not null]
+  license_plate varchar [not null]
+  capacity decimal [not null, default: 1]
   type type_car
   is_active boolean
   created_at timestamp [not null, default: 'now()']
@@ -33,7 +48,7 @@ Table driver as d{
 Table type_fuel as tf{
   id uuid [pk]
   name varchar [not null]
-  price decimal [not null]
+  price decimal [not null, default: 0]
   created_at timestamp [not null, default: 'now()']
   updated_at timestamp [not null, default: 'now()']
   deleted_at timestamp [not null, default: 'now()']
