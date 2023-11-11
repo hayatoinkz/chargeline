@@ -1,7 +1,21 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "chargeline-frontend",
   "private": true,
+  "version": "0.1.0",
+  "description": "A gas station management",
+  "packageManager": "bun@1.0.6",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hayatojpg/fluxstation/tree/main/frontend"
+  },
+  "contributors": [
+    "Vinicius Rocha <vinicius.workspace@gmail.com>"
+  ],
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
