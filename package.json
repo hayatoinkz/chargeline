@@ -1,11 +1,12 @@
 {
-  "name": "fluxstation-fullstack-challenge",
+  "name": "chargeline",
   "private": true,
   "version": "0.1.0",
   "description": "A gas station management",
-  "packageManager": "pnpm@8.6.10",
+  "packageManager": "bun@1.0.6",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   "contributors": [
     "Vinicius Rocha <vinicius.workspace@gmail.com>"
   ],
+  "license": "UNLICENSED",
   "scripts": {
     "commit": "cz",
     "lint:backend": "cd backend && bun lint",
