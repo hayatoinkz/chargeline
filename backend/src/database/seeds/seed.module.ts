@@ -8,9 +8,10 @@ import { TypeOrmConfigService } from '../typeorm-config.service';
 import { RoleSeedModule } from './role/role-seed.module';
 import { StatusSeedModule } from './status/status-seed.module';
 import { UserSeedModule } from './user/user-seed.module';
-
+import { TypeCarSeedModule } from './type-car/type-car-seed.module';
 @Module({
   imports: [
+    TypeCarSeedModule,
     RoleSeedModule,
     StatusSeedModule,
     UserSeedModule,
