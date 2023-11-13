@@ -3,10 +3,10 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { EntityCondition } from 'src/utils/types/entity-condition.type';
 import { IPaginationOptions } from 'src/utils/types/pagination-options';
 import { DeepPartial, FindOptionsWhere, Repository } from 'typeorm';
-import { CreateUserDto } from './dto/create-driver.dto';
-import { User } from './entities/driver.entity';
+import { CreateUserDto } from './dto/create-user.dto';
+import { User } from './entities/user.entity';
 import { NullableType } from '../utils/types/nullable.type';
-import { FilterUserDto, SortUserDto } from './dto/query-driver.dto';
+import { FilterUserDto, SortUserDto } from './dto/query-user.dto';
 
 @Injectable()
 export class UsersService {

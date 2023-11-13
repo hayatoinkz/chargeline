@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
   DeleteDateColumn,
 } from 'typeorm';
-import { User } from '../../drivers/entities/driver.entity';
+import { User } from '../../users/entities/user.entity';
 import { Allow } from 'class-validator';
 import { EntityHelper } from 'src/utils/entity-helper';
 

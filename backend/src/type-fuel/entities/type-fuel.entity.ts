@@ -1,27 +1,31 @@
 import {
+  Column,
   CreateDateColumn,
+  DeleteDateColumn,
   Entity,
   Index,
-  ManyToOne,
   PrimaryGeneratedColumn,
-  DeleteDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
-import { User } from '../../users/entities/user.entity';
 import { EntityHelper } from 'src/utils/entity-helper';
 
 @Entity()
-export class Session extends EntityHelper {
+export class TypeFuel extends EntityHelper {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => User, {
-    eager: true,
-  })
   @Index()
-  user: User;
+  @Column({ type: String })
+  name: string;
+
+  @Column({ type: 'decimal' })
+  price: number;
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
 
   @DeleteDateColumn()
   deletedAt: Date;
