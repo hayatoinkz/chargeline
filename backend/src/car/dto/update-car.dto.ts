@@ -1,6 +1,4 @@
-import { PartialType } from '@nestjs/swagger';
-
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { IsOptional, Validate } from 'class-validator';
 import { Status } from 'src/statuses/entities/status.entity';
 import { IsExist } from 'src/utils/validators/is-exists.validator';
@@ -12,12 +10,13 @@ export class UpdateCarDto extends PartialType(CreateCarDto) {
   @Validate(IsExist, ['User', 'id'], {
     message: 'userNotExists',
   })
+  @IsOptional()
   user?: User | null;
 
   @ApiProperty({ type: Status })
-  @IsOptional()
   @Validate(IsExist, ['Status', 'id'], {
     message: 'statusNotExists',
   })
+  @IsOptional()
   status?: Status;
 }
