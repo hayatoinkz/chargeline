@@ -17,12 +17,12 @@ import { HeaderResolver } from 'nestjs-i18n';
 import { TypeOrmConfigService } from './database/typeorm-config.service';
 import { ForgotModule } from './forgot/forgot.module';
 import { MailModule } from './mail/mail.module';
-import { HomeModule } from './home/home.module';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { AllConfigType } from './config/config.type';
 import { SessionModule } from './session/session.module';
 import { MailerModule } from './mailer/mailer.module';
 import { TypeFuelModule } from './type-fuel/type-fuel.module';
+import { CarModule } from './car/car.module';
 
 @Module({
   imports: [
@@ -75,7 +75,7 @@ import { TypeFuelModule } from './type-fuel/type-fuel.module';
     SessionModule,
     MailModule,
     MailerModule,
-    HomeModule,
+    CarModule,
     TypeFuelModule,
   ],
 })
