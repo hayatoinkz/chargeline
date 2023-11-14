@@ -29,12 +29,6 @@ Nossa API para gestão de combustíveis.
 
 ## Instalação
 
-Instale chargeline-backend com `bun`
-
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
-
 ```bash
 git clone git@github.com:hayatojpg/chargeline.git
 
@@ -114,13 +108,13 @@ Mude `DATABASE_HOST=postgres` para `DATABASE_HOST=localhost`
 Mude `MAIL_HOST=maildev` para `MAIL_HOST=localhost`
 
 ```bash
-bun install
+npm run install
 
-bun migration:run
+npm run migration:run
 
-bun seed:run
+npm run seed:run
 
-bun start:dev
+npm run start:dev
 ```
 
 ## Links
@@ -135,31 +129,31 @@ bun start:dev
 Gerar migration
 
 ```bash
-bun migration:generate -- src/database/migrations/CreateNameTable
+npm run migration:generate -- src/database/migrations/CreateNameTable
 ```
 
 Rodar migration
 
 ```bash
-bun migration:run
+npm run migration:run
 ```
 
 Reverter migration
 
 ```bash
-bun migration:revert
+npm run migration:revert
 ```
 
 Dropar todas as tabelas do banco
 
 ```bash
-bun schema:drop
+npm run schema:drop
 ```
 
 Rodar seed
 
 ```bash
-bun seed:run
+npm run seed:run
 ```
 
 ## Rodando os testes
@@ -168,10 +162,10 @@ Para rodar os testes, rode o seguinte comando
 
 ```bash
 # unit tests
-bun test
+npm run test
 
 # e2e tests
-bun test:e2e
+npm run test:e2e
 ```
 
 ## Documentação da API
