@@ -23,6 +23,7 @@ import { SessionModule } from './session/session.module';
 import { MailerModule } from './mailer/mailer.module';
 import { TypeFuelModule } from './type-fuel/type-fuel.module';
 import { CarModule } from './car/car.module';
+import { FuelSupplyModule } from './fuel-supply/fuel-supply.module';
 
 @Module({
   imports: [
@@ -77,6 +78,7 @@ import { CarModule } from './car/car.module';
     MailerModule,
     CarModule,
     TypeFuelModule,
+    FuelSupplyModule,
   ],
 })
 export class AppModule {}
