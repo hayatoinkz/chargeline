@@ -8,54 +8,67 @@ Project project_name {
   Note: 'A gas station management'
 }
 
-// Fuel Supply Context
-Table fuel_supply as fsupply{
-  id uuid [pk]
-  car_id uuid [ref: > c.id, not null]
-  quantity serial [not null, default: 1]
-  type uuid [ref: > tf.id, not null]
-  total_price decimal [not null, default: 0]
-  created_at timestamp [not null, default: 'now()']
-  updated_at timestamp [not null, default: 'now()']
-  deleted_at timestamp [not null, default: 'now()']
+Table user as u{
+  id integer [pk, increment]
+  firstName varchar [not null]
+  lastName varchar [not null]
+  socialId varchar [null]
+  email varchar [not null]
+  photo varchar [null]
+  roleId uid [ref: > rl.id, not null]
+  statusId uid [ref: > st.id, not null]
+  createdAt timestamp [not null, default: 'now()']
+  updatedAt timestamp [not null, default: 'now()']
+  deletedAt timestamp [not null, default: 'now()']
 }
 
-Table driver as d{
-  id uuid [pk]
-  first_name varchar [not null]
-  last_name varchar [not null]
-  email varchar [not null]
-  is_active boolean
-  created_at timestamp [not null, default: 'now()']
-  updated_at timestamp [not null, default: 'now()']
-  deleted_at timestamp [not null, default: 'now()']
+// Fuel Supply Context
+Table fuel_supply as fsupply{
+  id integer [pk, increment]
+  carId uuid [ref: > c.id, not null]
+  quantity serial [not null, default: 1]
+  typeId uuid [ref: > tf.id, not null]
+  totalPrice decimal [not null, default: 0]
+  createdAt timestamp [not null, default: 'now()']
+  updatedAt timestamp [not null, default: 'now()']
+  deletedAt timestamp [not null, default: 'now()']
 }
 
 Table car as c{
-  id uuid [pk]
-  driver_id uuid [ref: > d.id, not null]
+  id integer [pk, increment]
+  user uuid [ref: > u.id, not null]
   brand varchar [not null]
   model varchar [not null]
-  license_plate varchar [not null]
+  licensePlate varchar [not null]
   capacity decimal [not null, default: 1]
-  type type_car
-  is_active boolean
-  created_at timestamp [not null, default: 'now()']
-  updated_at timestamp [not null, default: 'now()']
-  deleted_at timestamp [not null, default: 'now()']
+  typeId  uid [ref: > tc.id, not null]
+  statusId uid [ref: > st.id, not null]
+  createdAt timestamp [not null, default: 'now()']
+  updatedAt timestamp [not null, default: 'now()']
+  deletedAt timestamp [not null, default: 'now()']
 }
 
 Table type_fuel as tf{
-  id uuid [pk]
+  id integer [pk, increment]
   name varchar [not null]
   price decimal [not null, default: 0]
-  created_at timestamp [not null, default: 'now()']
-  updated_at timestamp [not null, default: 'now()']
-  deleted_at timestamp [not null, default: 'now()']
+  createdAt timestamp [not null, default: 'now()']
+  updatedAt timestamp [not null, default: 'now()']
+  deletedAt timestamp [not null, default: 'now()']
 }
 
-// Enums
-enum type_car {
-  flex
-  diesel
+// Utils
+Table status as st{
+  id integer [pk, increment]
+  name varchar [not null]
+}
+
+Table role as rl{
+  id integer [pk, increment]
+  name varchar [not null]
+}
+
+Table type_car as tc{
+  id integer [pk, increment]
+  name varchar [not null]
 }
