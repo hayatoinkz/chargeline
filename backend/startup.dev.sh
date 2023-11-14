@@ -2,6 +2,6 @@
 set -e
 
 /opt/wait-for-it.sh postgres:5432
-bun migration:run
-bun seed:run
-bun start:prod
+npm run migration:run
+npm run seed:run
+npm run start:prod

@@ -1,10 +1,12 @@
+name: chargeline-backend
 services:
   postgres:
+    container_name: 'postgres'
     image: postgres:16.0-alpine
     ports:
       - ${DATABASE_PORT}:5432
     volumes:
-      - db:/var/lib/postgresql/data
+      - chargeline-db:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
@@ -19,12 +21,16 @@ services:
       - ${MAIL_PORT}:1025
 
   adminer:
+    container_name: chargeline-adminer
     image: adminer
     restart: always
     ports:
       - 8080:8080
 
   api:
+    depends_on:
+      - postgres
+    image: chargeline-api
     build:
       context: .
       dockerfile: Dockerfile
@@ -32,4 +38,4 @@ services:
       - ${APP_PORT}:${APP_PORT}
 
 volumes:
-  db:
+  chargeline-db:
