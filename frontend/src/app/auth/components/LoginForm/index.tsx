@@ -6,9 +6,7 @@ import useAuthActions from '@/hooks/auth/use-auth-actions';
 import useAuthTokens from '@/hooks/auth/use-auth-tokens';
 import { AuthLogin } from '@/services/api/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useGoogleLogin } from '@react-oauth/google';
 import { useForm } from 'react-hook-form';
-import { FcGoogle } from 'react-icons/fc';
 
 import { cn } from '@/lib/utils';
 import { Button, buttonVariants } from '@/components/ui/button';
@@ -50,9 +48,9 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
     setIsLoading(false);
   }
 
-  const loginGoogle = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log('onSuccess', tokenResponse),
-  });
+  // const loginGoogle = useGoogleLogin({
+  //   onSuccess: (tokenResponse) => console.log('onSuccess', tokenResponse),
+  // });
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
@@ -107,7 +105,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
           </div>
         </form>
       </Form>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
         </div>
@@ -123,7 +121,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
           <FcGoogle className="mr-2 h-4 w-4" />
         )}
         Google
-      </Button>
+      </Button> */}
 
       <Link href="/auth/forgot-password" className={cn(buttonVariants({ variant: 'ghost' }))}>
         Esqueceu a senha?

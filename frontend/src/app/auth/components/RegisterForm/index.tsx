@@ -3,9 +3,7 @@
 import * as React from 'react';
 import { AuthSignUp } from '@/services/api/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useGoogleLogin } from '@react-oauth/google';
 import { useForm } from 'react-hook-form';
-import { FcGoogle } from 'react-icons/fc';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -31,9 +29,9 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
     setIsLoading(false);
   }
 
-  const registerGoogle = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log('onSuccess', tokenResponse),
-  });
+  // const registerGoogle = useGoogleLogin({
+  //   onSuccess: (tokenResponse) => console.log('onSuccess', tokenResponse),
+  // });
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
@@ -128,7 +126,7 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
           </div>
         </form>
       </Form>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
         </div>
@@ -143,7 +141,7 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
           <FcGoogle className="mr-2 h-4 w-4" />
         )}
         Google
-      </Button>
+      </Button> */}
     </div>
   );
 }
