@@ -42,6 +42,24 @@ export class FuelSupplyService {
       }));
     }
 
+    if (filterOptions?.carId) {
+      where.car = {
+        id: filterOptions.carId,
+      };
+    }
+
+    if (filterOptions?.brand) {
+      where.car = {
+        brand: filterOptions.brand,
+      };
+    }
+
+    if (filterOptions?.capacity) {
+      where.car = {
+        capacity: filterOptions.capacity,
+      };
+    }
+
     return this.carsRepository.find({
       skip: (paginationOptions.page - 1) * paginationOptions.limit,
       take: paginationOptions.limit,

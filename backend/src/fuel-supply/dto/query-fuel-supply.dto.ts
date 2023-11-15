@@ -16,6 +16,10 @@ export class FilterFuelSupplyDto {
   @Type(() => TypeCar)
   types?: TypeCar[] | null;
 
+  @ApiProperty({ type: Number })
+  @IsOptional()
+  carId?: number | null;
+
   @ApiProperty({ example: 'Nissan' })
   @IsOptional()
   @IsString()
