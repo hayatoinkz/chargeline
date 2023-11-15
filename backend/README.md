@@ -18,14 +18,10 @@ Nossa API para gestão de combustíveis.
 - [x] Config Service ([@nestjs/config](https://www.npmjs.com/package/@nestjs/config)).
 - [x] Mailing ([nodemailer](https://www.npmjs.com/package/nodemailer)).
 - [x] Login e Cadastro via E-mail.
-- [x] Login Social (Google).
 - [x] Role de Admin e Usuário.
-- [x] I18N ([nestjs-i18n](https://www.npmjs.com/package/nestjs-i18n)).
-- [x] Upload de Arquivos. Suporte para Local e Amazon S3.
 - [x] Swagger.
 - [x] E2E e Testes Unitários.
 - [x] Docker.
-- [x] CI (Github Actions).
 
 ## Instalação
 
@@ -107,6 +103,8 @@ Mude `DATABASE_HOST=postgres` para `DATABASE_HOST=localhost`
 
 Mude `MAIL_HOST=maildev` para `MAIL_HOST=localhost`
 
+Mude `BACKEND_DOMAIN=api` para `MAIL_HOST=http://localhost:3001`
+
 ```bash
 npm run install
 
@@ -168,34 +166,7 @@ npm run test
 npm run test:e2e
 ```
 
-## Documentação da API
-
-#### Retorna todos os itens
-
-```http
-  GET /api/items
-```
-
-| Parâmetro | Tipo     | Descrição                           |
-| :-------- | :------- | :---------------------------------- |
-| `api_key` | `string` | **Obrigatório**. A chave da sua API |
-
-#### Retorna um item
-
-```http
-  GET /api/items/${id}
-```
-
-| Parâmetro | Tipo     | Descrição                                   |
-| :-------- | :------- | :------------------------------------------ |
-| `id`      | `string` | **Obrigatório**. O ID do item que você quer |
-
-#### add(num1, num2)
-
-Recebe dois números e retorna a sua soma.
-
 ## Referência
 
 - [NestJS](https://nestjs.com/)
 - [TypeORM](https://www.npmjs.com/package/typeorm)
-- [Boilerplate](https://github.com/brocoders/nestjs-boilerplate)

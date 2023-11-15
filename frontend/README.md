@@ -33,9 +33,14 @@ bun dev
 
 Rodando localmente em [http://localhost:3000](http://localhost:3000)
 
-## Demonstração
+## Telas
 
-Insira um gif ou um link de alguma demonstração
+![Login](../docs/screenshots/login.png)
+![Register](../docs/screenshots/register.png)
+![Empty](../docs/screenshots/empty.png)
+![History](../docs/screenshots/history.png)
+![AddCar](../docs/screenshots/add-car.png)
+![DeleteCar](../docs/screenshots/delete-car.png)
 
 ## Referência
 
