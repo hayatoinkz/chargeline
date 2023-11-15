@@ -39,7 +39,7 @@ export class CarController {
   constructor(private readonly carsService: CarService) {}
 
   @SerializeOptions({
-    groups: ['me'],
+    groups: ['admin', 'me'],
   })
   @Post()
   @HttpCode(HttpStatus.CREATED)
