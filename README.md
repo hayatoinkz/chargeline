@@ -15,12 +15,12 @@ Nosso projeto para gestão de combustíveis.
 
 ## Processo
 
-Comecei modelando o banco de dados seguindo os requisitos funcionais como base e adicionando algumas tabelas que achei necessária.
+Comecei modelando o banco de dados seguindo os requisitos funcionais como base e adicionando algumas tabelas que achei necessárias.
 
 ![DB](./docs/db.png)
 [Acesse o diagrama](./docs/db.dmbl)
 
-Em seguida criei um Design no Figma para o projeto para poder visualizar melhor o funcionamento do sistema, utilizei algumas bibliotecas e tokens como TailwindCSS e Shadcn/UI.
+Em seguida, criei um Design no Figma para poder visualizar melhor o funcionamento do sistema, utilizei algumas bibliotecas e tokens como TailwindCSS e Shadcn/UI.
 
 ![Figma](./docs/screenshots/figma.png)
 [Acesse o Figma](https://www.figma.com/file/aRxRfK4EWf6muUNq5Vu60c/%F0%9F%96%A5%EF%B8%8F-App-%E2%80%A2-Fluxstation?type=design&node-id=505%3A9368&mode=design&t=enqLdTvo1YpKXlKl-1)
@@ -32,7 +32,7 @@ Em seguida criei um Design no Figma para o projeto para poder visualizar melhor 
 
 ## Instalação
 
-Instale chargeline com `bun`
+Instale o ChargeLine com `bun`
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
